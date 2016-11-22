@@ -277,3 +277,24 @@ if($opr=="upd")
                     </td>
                </tr>
                
+               <tr>
+               		<td>E-mail</td>
+                    <td>
+                    	<input type="text" name="emailtxt" id="textbox" value="<?php echo $rs_upd['email'];?>" />
+                    </td>
+               </tr>
+               
+               <tr>
+               		<td>Note</td>
+                    <td>
+                    	<textarea name="notetxt" cols="23" rows="3"><?php echo $rs_upd['note'];?></textarea>
+                    </td>
+               </tr>
+               
+          	</table>
+
+  </div>
+    </form>
+
+</div><!-- end of style_informatios -->
+     
