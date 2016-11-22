@@ -18,5 +18,16 @@ if(isset($_GET['rs_id']))
 			
 }
 	echo $msg;
-?>
+    ?>
 
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/style_view.css" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<div id="style_div" >
+<form method="post">
+<table width="755">
