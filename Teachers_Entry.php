@@ -411,3 +411,39 @@ else
    </div>
     
 	
+
+	<div>
+    	<table border="0" cellpadding="5" cellspacing="0">
+                    <tr> 
+                    	<td>Degree</td>
+                    <td>
+                        <select name="degree" id="textbox">
+                            <option>------------  Select  ------------</option>
+                            <?php
+                                $mm=array("Bachelor","Master","P.HD");
+                                $i=0;
+                                foreach($mm as $mon){
+                                    $i++;
+										echo"<option value='$mon'> $mon</option>";
+                                    //echo"<option value='$i'> $mon</option>";		
+                                }
+                            ?>
+                        </select>
+                    </td>
+                </tr>
+                
+            	<tr>
+                	<td>Salary</td>
+                    <td>
+                    	<input type="text" name="slarytxt" id="textbox" />
+                    </td>
+                </tr>
+                
+            	<tr>
+                	<td>Married</td>
+                    <td>
+                    	<input type="radio" name="marriedrdo" value="Yes"  checked="checked"/>Yes
+                        <input type="radio" name="marriedrdo" value="No" />No
+                    </td>
+                </tr>
+  
