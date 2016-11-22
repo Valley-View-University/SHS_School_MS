@@ -45,15 +45,15 @@
                 	</div>
 					
 					  <div >
-                        <a href="teachers_pay.php" title="payment">Teacher pay</a><br />
+                        <a href="?tag=teachers_pay" title="payment">Teacher pay</a><br />
                 	</div>
 					
 					<div >
-                        <a href="teachers_attendance.php" title="Attendance">Teacher Attendance</a><br />
+                        <a href="?tag=teachers_attendance" title="Attendance">Teacher Attendance</a><br />
                 	</div>
                     
 					<div >
-                        <a href="student_pay.php" title="payment">Student pay</a><br />
+                        <a href="?tag=student_pay" title="payment">Student pay</a><br />
                 	</div>
                     
                      <div>
