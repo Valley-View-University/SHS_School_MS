@@ -59,3 +59,18 @@ if(isset($_GET['rs_id']))
             <th>Note</th>
             <th colspan="2">Operation</th>
         </tr>
+ <?php
+		 $key="";
+	if(isset($_POST['searchtxt']))
+		$key=$_POST['searchtxt'];
+	
+	if($key !="")
+		$sql_sel=mysql_query("SElECT * FROM teacher_tbl WHERE f_name  like '%$key%' or l_name like '%$key%'");
+	else
+        $sql_sel=mysql_query("SELECT * FROM teacher_tbl");
+		
+    $i=0;
+    while($row=mysql_fetch_array($sql_sel)){
+    $i++;
+    $color=($i%2==0)?"lightblue":"white";
+    ?>
