@@ -113,6 +113,121 @@
                         <li id="li_submenu"><a href="everyone.php?tag=faculties_entry" class=" order">Department Entry</a></li>
                         <li id="li_submenu"><a href="everyone.php?tag=view_faculties" class="customer">View Department</a></li>
                     </ul>
+					
+					 
+                
+                </li>
+                
+                <li id="li_menu"><a href="#">Subjects</a>
+                
+                    
+                    <ul>
+                    	<li id="li_submenu"><a href="everyone.php?tag=subject_entry" class=" customer">Subjects Entry</a></li>
+                        <li id="li_submenu"><a href="everyone.php?tag=view_subjects" class=" customer">View Subjects</a></li>
+                    </ul>
+                
+                
+                </li>
+           <li id="li_menu"><a href="">Score</a>
+                
+                    
+                    <ul>
+                        
+                        <li id="li_submenu"><a href="everyone.php?tag=score_entry" class="customer"> Score Entry</a></li>
+                        <li id="li_submenu"><a href="everyone.php?tag=view_scores" class="order">View Score</a></li>
+                    </ul>
+                
+                
+                </li>
+                
+                <li id="li_menu" style="border-right:#CCC"><a href="">Users</a>
+                
+                    
+                    <ul>
+                        <li id="li_submenu"><a href="everyone.php?tag=susers_entry" class="customer">Users Entry</a></li>
+                        <li id="li_submenu"><a href="everyone.php?tag=view_users" class="sales">View Users</a></li>
+                    </ul>
+                    
+                </li>
+                
+                <li id="li_menu"><a href="">AboutUs</a>
+                
+                    
+                    <ul>
+                        <li id="li_submenu"><a href="http://www.esc.edu.gh/about-us/" class="stocks">EBS</a></li>
+                    </ul>
+                
+                
+                </li>
+                <li id="li_menu"><a href="">Contact</a>
+                
+                	<ul>
+                    	 <li id="li_submenu"><a href="http://www.esc.edu.gh/contact-us/" class="customer">Contact Entry</a></li>
+                
+                	</ul>
+                </li>
+				
+				
+				 <li id="li_menu"><a href="">LogOut</a>
+                
+                	<ul>
+                    	 <li id="li_submenu"><a href="logout.php" class="customer">Bye</a></li>
+                	</ul>
+                </li>
+                           
+      </div><!--end of menu2--> 
+            
+            
+            <div id="contents">
+            
+            	<div id="informations">
+                	<div id="in_informations">
+				<?php
+   						if($tag=="home" or $tag=="")
+							include("home.php");
+                        elseif($tag=="student_entry")
+                            include("Students_Entry.php");
+                        elseif($tag=="teachers_entry")
+                            include("Teachers_Entry.php");
+                        elseif($tag=="score_entry")
+                            include("Score_Entry.php");	
+                        elseif($tag=="subject_entry")
+                            include("Subject_Entry.php");
+                        elseif($tag=="faculties_entry")
+                            include("Faculties_Entry.php");
+                        elseif($tag=="susers_entry")
+                            include("Users_Entry.php");	
+                        elseif($tag=="view_students")
+                            include("View_Students.php");
+						elseif($tag=="view_teachers")
+							include("View_Teachers.php");
+						elseif($tag=="view_subjects")
+							include("View_Subjects.php");
+						elseif($tag=="view_scores")
+							include("View_Scores.php");
+						elseif($tag=="view_users")
+							include("View_Users.php");
+						elseif($tag=="view_faculties")
+							include("View_Faculties.php");
+						elseif($tag=="test_score")
+							include("test_Scores .php");
+							/*$tag= $_REQUEST['tag'];
+							
+							if(empty($tag)){
+								include ("Students_Entry.php");
+							}
+							else{
+								include $tag;
+							}*/
+									
+                        ?>
+                    </div><!--end of in_informations -->
+                </div><!--end of informations -->
+    		</div><!--end of contens -->   
+     </div><!--end of rmain -->
+    	
+    </div><!--end of admin -->
+
              
 </body>
 </html>
