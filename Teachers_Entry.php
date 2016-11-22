@@ -162,3 +162,20 @@ if($opr=="upd")
 							}
 							
 						?>
+	</select>
+                    -
+                    <select name="mm">
+                    	<option>Month</option>
+						<?php
+							$sel="";
+                            $mm=array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","NOv","Dec");
+                            $i=0;
+                            foreach($mm as $mon){
+                                $i++;
+									if($i==$m){
+										$sel=$sel="selected='selected'";}
+									else
+										$sel="";
+                                echo"<option value='$i' $sel> $mon</option>";		
+                            }
+                        ?>
