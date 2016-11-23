@@ -25,7 +25,8 @@ if(isset($_GET['rs_id']))
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="css/style_view.css" />
 <title>Untitled Document</title>
-</head>
+
+	</head>
 
 <body>
 <div id="style_div" >
@@ -73,4 +74,10 @@ if(isset($_GET['rs_id']))
     while($row=mysql_fetch_array($sql_sel)){
     $i++;
     $color=($i%2==0)?"lightblue":"white";
+	    
     ?>
+		  <tr bgcolor="<?php echo $color?>">
+            <td><?php echo $i;?></td>
+            <td><?php echo $row['f_name']."    ".$row['l_name'];?></td>
+            <td><?php echo $row['gender'];?></td>
+            <td><?php echo $row['dob'];?></td>
