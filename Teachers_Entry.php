@@ -228,3 +228,27 @@ if($opr=="upd")
                 </td>
             </tr>
             </table  >  
+		
+   </div>
+ 
+	<div>
+    	<table border="0" cellpadding="5" cellspacing="0">
+                    <tr> 
+                    	<td>Degree</td>
+                    <td>
+                        <select name="degree" id="textbox" >
+                            
+                            <?php
+                                $mm=array("Bachelor","Master","P.HD");
+                                $i=0;
+                                foreach($mm as $mon){
+                                    $i++;
+										if($mon==$rs_upd['degree'])
+											$iselect="selected";
+										else
+											$iselect="";
+											
+										echo"<option value='$mon' $iselect> $mon</option>";		
+                                }
+                            ?>
+                        </select>
