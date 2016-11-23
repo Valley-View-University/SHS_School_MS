@@ -329,4 +329,33 @@ else
                     	<input type="text" name="fnametxt" id="textbox" />
                     </td>
             	</tr>
- 
+                
+                <tr>
+                	<td>Last Name</td>
+                    <td>
+                    	<input type="text" name="lnametxt" id="textbox" />
+                    </td>
+            	</tr>
+                
+                <tr>
+                	<td>Gender</td>
+                    <td>
+                    	<input type="radio" name="genderrdo" value="Male" checked="checked"/>Male
+                        <input type="radio" name="genderrdo" value="Female" />Female
+                    </td>
+                </tr>
+                
+                <td>Date Of Birth</td>
+                <td>
+                	<select name="yy" style="height:25px;">
+                    	<option>Year</option>
+                        <?php
+							for($i=1985;$i<=2015;$i++){	
+							echo"<option value='$i'>$i</option>";
+							}
+						?>
+                	</select>
+                    -
+                    <select name="mm" style="height:25px;">
+                    	<option>Month</option>
+	
