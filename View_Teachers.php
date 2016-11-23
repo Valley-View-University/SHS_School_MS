@@ -23,7 +23,8 @@ if(isset($_GET['rs_id']))
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="css/style_view.css" />
+
+	<link rel="stylesheet" type="text/css" href="css/style_view.css" />
 <title>Untitled Document</title>
 
 	</head>
@@ -88,3 +89,7 @@ if(isset($_GET['rs_id']))
             <td><?php echo $row['married'];?></td>
             <td><?php echo $row['phone'];?></td>
             <td><?php echo $row['email'];?></td>
+			   <td><?php echo $row['note'];?></td>
+            <td><a href="?tag=teachers_entry&opr=upd&rs_id=<?php echo $row['teacher_id'];?>" title="Upate"><img src="picture/update.png" /></a></td>
+            <td><a href="?tag=view_teachers&opr=del&rs_id=<?php echo $row['teacher_id'];?>" title="Delete"><img src="picture/delete.png" /></a></td>
+        </tr>
