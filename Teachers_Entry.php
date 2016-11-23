@@ -179,3 +179,25 @@ if($opr=="upd")
                                 echo"<option value='$i' $sel> $mon</option>";		
                             }
                         ?>
+						
+                    </select>
+                    -
+                    <select name="dd">
+                    	<option>Date</option>
+						<?php
+						$sel="";
+                        for($i=1;$i<=31;$i++){
+							if($i==$d)
+							$sel="selected='selected'";
+							else
+								$sel="";
+                        ?>
+                        <option value="<?php echo $i ;?>"<?php echo $sel ;?> >
+                        <?php
+                        if($i<10)
+                            echo"0"."$i" ;
+                        else
+                            echo"$i";	
+							  
+						?>
+						</option>	
