@@ -23,30 +23,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `article_tbl`
---
-
-CREATE TABLE IF NOT EXISTS `article_tbl` (
-  `a_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `loca_id` int(10) NOT NULL,
-  `title` varchar(100) NOT NULL,
-  `content` text NOT NULL,
-  `status` char(10) NOT NULL,
-  `note` varchar(100) NOT NULL,
-  PRIMARY KEY (`a_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
-
---
--- Dumping data for table `article_tbl`
---
-
-INSERT INTO `article_tbl` (`a_id`, `loca_id`, `title`, `content`, `status`, `note`) VALUES
-(2, 1, 'Student Entry', 'link to other page', 'Private', 'ttt'),
-(3, 1, 'Teachers Entry', 'link to teacher entry', 'Public', 'for teacher');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `facuties_tbl`
 --
 
@@ -62,29 +38,12 @@ CREATE TABLE IF NOT EXISTS `facuties_tbl` (
 --
 
 INSERT INTO `facuties_tbl` (`faculties_id`, `faculties_name`, `note`) VALUES
-(2, 'Science and Technology', 'Part of science'),
-(3, 'Law', 'part of Law');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `location_tb`
---
-
-CREATE TABLE IF NOT EXISTS `location_tb` (
-  `loca_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `l_name` varchar(100) NOT NULL,
-  `description` text NOT NULL,
-  `note` varchar(150) NOT NULL,
-  PRIMARY KEY (`loca_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
-
---
--- Dumping data for table `location_tb`
---
-
-INSERT INTO `location_tb` (`loca_id`, `l_name`, `description`, `note`) VALUES
-(1, 'left menu', 'link to other page', 'menu');
+(2, 'Science', 'Part of science'),
+(3, 'Business', 'part of business'),
+(4, 'General Arts', 'Part of Art'),
+(5, 'Visual Arts', 'part of visual arts'),
+(6, 'Home Economics', 'Part of Econs'),
+(7, 'Agriculture', 'part of Agric');
 
 -- --------------------------------------------------------
 
@@ -158,10 +117,10 @@ CREATE TABLE IF NOT EXISTS `stu_tbl` (
 --
 
 INSERT INTO `stu_tbl` (`stu_id`, `f_name`, `l_name`, `gender`, `dob`, `pob`, `address`, `phone`, `email`, `note`) VALUES
-(1, 'Mom', 'Vannak', 'Male', '1991-03-01', 'Takeo Province', 'Phnom Penh', '088 9 666 120', 'vannakkmum@gmail.com', 'Student'),
-(2, 'Chon', 'Phearak', 'Male', '1990-05-04', 'Takeo Province  ', '  Phnom Penh', '015 66 77 33', 'phearakchon@yahoo.com  ', 'Student'),
-(3, 'Soa', 'Muny', 'Male', '1988-05-05', 'Takeo Province   ', '   Phnom Penh', '097 69 90 123', 'munysoa@gmail.com   ', 'Student'),
-(4, 'Sok', 'Cheatha', 'Female', '1989-06-06', 'Kompot', 'Phnom Penh', '099 77 66 55 ', 'cheatasok@gmail.com', 'Student');
+(1, 'Sam', 'Asosa', 'Male', '1991-03-01', 'Lagos State', 'vvu campus', '088 9 666 120', 'sam@gmail.com', 'Student'),
+(2, 'Joshua', 'Akas', 'Male', '1990-05-04', 'Ho', 'Ayensu', '015 66 77 33', 'akas@yahoo.com', 'Student'),
+(3, 'Solomom', 'Yaw', 'Male', '1988-05-05', 'Tema', 'Oyibi', '097 69 90 123', 'solomon@gmail.com   ', 'Student'),
+(4, 'Joy', 'Cheatha', 'Female', '1989-06-06', 'Tamale', 'Dodowa', '099 77 66 55 ', 'joy@gmail.com', 'Student');
 
 -- --------------------------------------------------------
 
@@ -184,12 +143,12 @@ CREATE TABLE IF NOT EXISTS `sub_tbl` (
 --
 
 INSERT INTO `sub_tbl` (`sub_id`, `faculties_id`, `teacher_id`, `semester`, `sub_name`, `note`) VALUES
-(1, 2, 1, '1', 'Web Programming', 'HTML and CSS'),
-(2, 2, 2, '1', 'OOP and C++', 'Part of C Language'),
-(3, 2, 3, '2', 'English for Computing', 'part 2'),
-(4, 2, 4, '2', 'Network', 'part2'),
-(5, 2, 5, '2', 'VB.Net', 'part 2'),
-(6, 2, 6, '2', 'Database', 'part 2');
+(1, 2, 1, '1', 'English', 'Oral and Core'),
+(2, 2, 2, '1', 'Mathematics', 'Part of Core Maths'),
+(3, 2, 3, '2', 'French', 'part 2'),
+(4, 2, 4, '2', 'Business studies', 'part2'),
+(5, 2, 5, '2', 'Agriculture', 'part 2'),
+(6, 2, 6, '2', 'Social studies', 'part 2');
 
 -- --------------------------------------------------------
 
@@ -219,12 +178,12 @@ CREATE TABLE IF NOT EXISTS `teacher_tbl` (
 --
 
 INSERT INTO `teacher_tbl` (`teacher_id`, `f_name`, `l_name`, `gender`, `dob`, `pob`, `address`, `degree`, `salary`, `married`, `phone`, `email`, `note`) VALUES
-(1, 'Hang', 'Sovann', 'Male', '1985-03-05', 'Kandal Province', 'Phnom Penh', 'Master', 1500, 'No', '015 871 787', 'sovannhang@gmail.com', 'Teacher and Staff'),
-(2, 'Pheng', 'Tola', 'Male', '1986-03-08', 'Kompong Cham Province', 'Phnom Penh', 'Bachelor', 1500, 'Yes', '016 572 393', 'tolapheng@gmail.com', 'Teacher and Staff'),
-(3, 'Sann', 'Vannthoeun', 'Male', '1990-07-03', 'Kandal Province', 'kankal', 'Bachelor', 1000, 'Yes', '087 666 55 ', 'vannthoeunsann@gmail.com', 'English'),
-(4, 'Tang', 'Hay', 'Male', '0000-00-00', 'Kroches', 'Phnom Penh', 'Bachelor', 1000, 'Yes', '099 77 66 33', 'haytang@gmail.com', 'network'),
-(5, 'Chi', 'Kim  Y', 'Male', '0000-00-00', 'Phnom Penh', 'Phnom Penh', 'Bachelor', 1500, 'Yes', '097 66 55 423', 'kimychi@gmail.com', 'VB'),
-(6, 'Sann', 'Sotherath', 'Male', '1985-02-01', 'Kandal Province', 'Phnom Penh', 'Bachelor', 1300, 'Yes', '012 33 44 55', 'sotherathsann@gmail.com', 'Database');
+(1, 'Abandoh', 'Savage', 'Male', '1985-03-05', 'Oyibi Province', 'Ayensu', 'Bachelor', 1500, 'Yes', '015 871 787', 'savage@gmail.com', 'French'),
+(2, 'Albert', 'Sackey', 'Male', '1986-03-08', 'Adenta Province', 'Adenta', 'Master', 3500, 'Yes', '016 572 393', 'sackey@gmail.com', 'Teacher and Staff'),
+(3, 'Victor', 'Franklin', 'Male', '1990-07-03', 'Kandal Province', 'Jos', 'Bachelor', 1000, 'No', '087 666 55 ', 'victor@gmail.com', 'Mathematics'),
+(4, 'Jo', 'Akanyife', 'Male', '0000-00-00', 'Madina', 'Phnom Penh', 'Bachelor', 1200, 'No', '099 77 66 33', 'jakas@gmail.com', 'English'),
+(5, 'Chi', 'Kim Y', 'Male', '0000-00-00', 'Phnom Penh', 'Phnom Penh', 'Bachelor', 1500, 'Yes', '097 66 55 423', 'kimychi@gmail.com', 'Business studies'),
+(6, 'Sann', 'Tony', 'Male', '1985-02-01', 'Kandal Province', 'Phnom Penh', 'Bachelor', 1300, 'Yes', '012 33 44 55', 'sotherathsann@gmail.com', 'Agriculture');
 
 -- --------------------------------------------------------
 
@@ -248,7 +207,7 @@ CREATE TABLE IF NOT EXISTS `users_tbl` (
 INSERT INTO `users_tbl` (`u_id`, `username`, `password`, `type`, `note`) VALUES
 (1, 'admin', 'admin', 'creator', 'creator'),
 (2, 'everyone', 'viewonly', 'visitor', 'visitor'),
-(4, 'vannak', 'vannak', 'creator', 'assignment\r\n');
+(4, 'asosa', 'admin', 'creator', 'assignment\r\n');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
