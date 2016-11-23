@@ -298,3 +298,35 @@ if($opr=="upd")
 
 </div><!-- end of style_informatios -->
      
+
+<?php	
+}
+else
+{
+?>
+<div id="top_style">
+        <div id="top_style_text">
+        Teachers Entry
+        </div>
+        <!-- end of top_style_text-->
+       <div id="top_style_button"> 
+       		<form method="post">
+            	<a href="?tag=view_teachers"><input type="button" name="btn_view" title="View Teachers" value="View Teachers" id="button_view" style="width:120px;"  /></a>
+             
+       		</form>
+       </div><!-- end of top_style_button-->
+</div><!-- end of top_style-->
+
+<!-- for form Upadte-->
+
+<div id="style_informations">
+	<form method="post">
+    	<div>
+    	<table border="0" cellpadding="5" cellspacing="0">
+            	<tr>
+                	<td>First Name</td>
+                    <td>
+                    	<input type="text" name="fnametxt" id="textbox" />
+                    </td>
+            	</tr>
+ 
