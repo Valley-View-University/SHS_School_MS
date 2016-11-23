@@ -41,7 +41,7 @@
 							}
 						?>  <?php */?>
                     <div >
-                        <a href="?tag=non_staff" title="non-staff">Register Non-staff</a><br />
+                        <a href="?tag=nonstaff" title="nonstaff">Register Non-staff</a><br />
                 	</div>
 					
 					  <div >
@@ -201,6 +201,8 @@
                             include("View_Students.php");
 						elseif($tag=="view_teachers")
 							include("View_Teachers.php");
+						elseif($tag=="view_nonstaff")
+						    include("View_nonstaff.php");
 						elseif($tag=="view_subjects")
 							include("View_Subjects.php");
 						elseif($tag=="view_scores")
@@ -209,6 +211,8 @@
 							include("View_Users.php");
 						elseif($tag=="view_faculties")
 							include("View_Faculties.php");
+						elseif($tag=="nonstaff")
+							include("nonstaff.php");
 						elseif($tag=="test_score")
 							include("test_Scores .php");
 							/*$tag= $_REQUEST['tag'];
