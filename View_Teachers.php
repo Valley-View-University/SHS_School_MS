@@ -93,3 +93,10 @@ if(isset($_GET['rs_id']))
             <td><a href="?tag=teachers_entry&opr=upd&rs_id=<?php echo $row['teacher_id'];?>" title="Upate"><img src="picture/update.png" /></a></td>
             <td><a href="?tag=view_teachers&opr=del&rs_id=<?php echo $row['teacher_id'];?>" title="Delete"><img src="picture/delete.png" /></a></td>
         </tr>
+		  <?php	
+    }
+    ?>
+    </table>
+</div><!-- end of content-input -->
+</body>
+</html>
