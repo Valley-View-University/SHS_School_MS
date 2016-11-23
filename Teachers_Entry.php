@@ -358,4 +358,33 @@ else
                     -
                     <select name="mm" style="height:25px;">
                     	<option>Month</option>
+			    <?php
+                            $mm=array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","NOv","Dec");
+                            $i=0;
+                            foreach($mm as $mon){
+                                $i++;
+                                echo"<option value='$i'> $mon</option>";		
+                            }
+                        ?>
+                    </select>
+                    -
+                    <select name="dd" style="height:25px;">
+                    	<option>Date</option>
+						<?php
+                        for($i=1;$i<=31;$i++){
+                        ?>
+                        <option value="<?php echo $i; ?>">
+                        <?php
+                        if($i<10)
+                            echo"0".$i;
+                        else
+                            echo"$i";	  
+						?>
+						</option>	
+						<?php 
+						}?>
+					</select>
+                </td>
+            </tr>
+    
 	
