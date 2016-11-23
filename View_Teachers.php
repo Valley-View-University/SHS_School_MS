@@ -31,3 +31,13 @@ if(isset($_GET['rs_id']))
 <div id="style_div" >
 <form method="post">
 <table width="755">
+	<tr>
+    	<td width="190px" style="font-size:18px; color:#006; text-indent:30px;">View Teachers</td>
+        <td><a href="?tag=teachers_entry"><input type="button" title="Add new Teachers" name="butAdd" value="Add New" id="button-search" /></a></td>
+        <td><input type="text" name="searchtxt" title="Enter name for search " class="search" autocomplete="off"/></td>
+        <td style="float:right"><input type="submit" name="btnsearch" value="Search" id="button-search" title="Search Teacher" /></td>
+    </tr>
+</table>
+</form>
+</div><!--end of style_div -->
+<br />
