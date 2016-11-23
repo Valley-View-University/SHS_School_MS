@@ -386,5 +386,28 @@ else
 					</select>
                 </td>
             </tr>
+		       <tr>
+                	<td>Place Of Birth</td>
+                    <td>
+                    	<input type="text"  name="pobtxt" id="textbox"/>
+                    </td>
+                </tr>
+                
+                <tr>
+            	<td>Address</td>
+            	<td>
+                	<textarea name="addrtxt" cols="23" rows="3"></textarea>
+    			</td>
+        	</tr>
+            
+            <tr>
+            	<td colspan="2">
+                	<input type="reset" value="Cancel" id="button-in"/>
+                	<input type="submit" name="btn_sub" value="Register" id="button-in"  />
+                </td>
+            </tr>
+            </table>
+
+   </div>
     
 	
