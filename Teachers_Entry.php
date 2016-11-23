@@ -252,3 +252,28 @@ if($opr=="upd")
                                 }
                             ?>
                         </select>
+           </td>
+                </tr>
+                
+            	<tr>
+                	<td>Salary</td>
+                    <td>
+                    	<input type="text" name="slarytxt" id="textbox" value="<?php echo $rs_upd['salary'];?>" />
+                    </td>
+                </tr>
+                
+            	<tr>
+                	<td>Married</td>
+                    <td>
+                    	<input type="radio" name="marriedrdo" value="Yes"<?php if($rs_upd['married']=="Yes") echo "checked";?>/>Yes 
+                        <input type="radio" name="marriedrdo" value="No"<?php if($rs_upd['married']=="No") echo "checked";?> />No
+                    </td>
+                </tr>
+                
+               <tr>
+               		<td>Phone</td>
+                    <td>
+                    	<input type="text"  name="phonetxt" id="textbox" value="<?php echo $rs_upd['phone'];?>" />
+                    </td>
+               </tr>
+               
