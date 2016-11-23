@@ -81,3 +81,10 @@ if(isset($_GET['rs_id']))
             <td><?php echo $row['f_name']."    ".$row['l_name'];?></td>
             <td><?php echo $row['gender'];?></td>
             <td><?php echo $row['dob'];?></td>
+<td><?php echo $row['pob'];?></td>
+            <td><?php echo $row['address'];?></td>
+            <td><?php echo $row['degree'];?></td>
+            <td><?php echo $row['salary'];?></td>
+            <td><?php echo $row['married'];?></td>
+            <td><?php echo $row['phone'];?></td>
+            <td><?php echo $row['email'];?></td>
