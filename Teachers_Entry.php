@@ -446,4 +446,35 @@ else
                         <input type="radio" name="marriedrdo" value="No" />No
                     </td>
                 </tr>
-  
+    <tr>
+               		<td>Phone</td>
+                    <td>
+                    	<input type="text"  name="phonetxt" id="textbox"/>
+                    </td>
+               </tr>
+               
+               <tr>
+               		<td>E-mail</td>
+                    <td>
+                    	<input type="text" name="emailtxt" id="textbox" />
+                    </td>
+               </tr>
+               
+               <tr>
+               		<td>Note</td>
+                    <td>
+                    	<textarea name="notetxt" cols="23" rows="3"></textarea>
+                    </td>
+               </tr>
+               
+          	</table>
+
+  </div>
+    </form>
+
+</div><!-- end of style_informatios -->
+<?php
+}
+?>
+</body>
+</html>
