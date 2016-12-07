@@ -118,7 +118,8 @@ if($opr=="upd")
             
             <tr>
             	<td>Facuties's Name</td>
-            	<td>
+
+		    <td>
                 	<select name="factxt" id="textbox">
                     	<option>---- Facuries's Name   ------</option>
                             <?php
@@ -170,4 +171,41 @@ if($opr=="upd")
                 	<input type="text" name="finaltxt"  id="textbox" value="<?php echo $rs_upd['final'];?>" />
                 </td>
             </tr>
- 
+            
+            <tr>
+            	<td>Note</td>
+                <td>
+                	<textarea name="notetxt" cols="23" rows="3"><?php echo $rs_upd['note'];?></textarea>
+                </td>
+            </tr>
+            
+            <tr>
+                <td colspan="2">
+                	<input type="reset" value="Cancel" id="button-in"/>
+                	<input type="submit" name="btn_upd" value="Update" id="button-in" title="Update"  />
+                </td>
+            </tr>
+		</table>
+
+   </div>
+    </form>
+
+</div><!-- end of style_informatios -->
+<?php	
+}
+else
+{
+?>
+	
+    <div id="top_style">
+        <div id="top_style_text">
+      		Scores Entry
+        </div><!-- end of top_style_text-->
+       <div id="top_style_button"> 
+       		<form method="post">
+            	<a href="?tag=view_scores"><input type="button" name="btn_view" value="View_Scores" id="button_view" style="width:120px;"  /></a>
+             
+       		</form>
+       </div><!-- end of top_style_button-->
+</div><!-- end of top_style-->
+
