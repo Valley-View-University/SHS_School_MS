@@ -67,3 +67,20 @@ if(isset($_GET['rs_id']))
     $i++;
     $color=($i%2==0)?"lightblue":"white";
     ?>
+ <tr bgcolor="<?php echo $color?>">
+            <td><?php echo $i;?></td>
+            <td><?php echo $row['faculties_id'];?></td>
+            <td><?php echo $row['teacher_id'];?></td>
+            <td><?php echo $row['semester'];?></td>
+            <td><?php echo $row['sub_name'];?></td>
+            <td align="center"><a href="?tag=subject_entry&opr=upd&rs_id=<?php echo $row['sub_id'];?>" title="Upate"><img src="picture/update.png" /></a></td>
+            <td align="center"><a href="?tag=view_subjects&opr=del&rs_id=<?php echo $row['sub_id'];?>" title="Delete"><img src="picture/delete.png" /></a></td>
+        </tr>
+    <?php	
+    }
+    ?>
+   	</table>
+ 	</form>
+</div><!--end of content_input -->
+</body>
+</html>
