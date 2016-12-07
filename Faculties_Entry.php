@@ -43,6 +43,74 @@ if(isset($_POST['btn_upd'])){
 		$msg="Update Fail".mysql_error();
 	}
 ?>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>EASTBANK SCHOOL</title>
+<link rel="stylesheet" type="text/css" href="css/style_entry.css" />
+</head>
 
+<body>
+
+<?php
+
+if($opr=="upd")
+{
+	$sql_upd=mysql_query("SELECT * FROM facuties_tbl WHERE faculties_id=$id");
+	$rs_upd=mysql_fetch_array($sql_upd);
+	
+?>
+
+<div id="top_style">
+        <div id="top_style_text">
+        	Department Update
+        </div><!-- end of top_style_text-->
+       <div id="top_style_button"> 
+       		<form method="post">
+            	<a href="?tag=view_department"><input type="button" name="btn_view" value="Back" title="View_faculties" id="button_view" style="width:70px;"  /></a>
+             
+       		</form>
+       </div><!-- end of top_style_button-->
+</div><!-- end of top_style-->
+
+<div id="style_informations">
+	<form method="post">
+    	<div>
+    	<table border="0" cellpadding="4" cellspacing="0">
+        	
+            
+            <tr>
+            	<td>Department's Name</td>
+            	<td>
+                	<input type="text" name="fnametxt" id="textbox" value="<?php echo $rs_upd['faculties_name'];?>" />
+                </td>
+            </tr>
+             <tr>
+            	<td>Note</td>
+                <td>
+                	<textarea name="notetxt" cols="23" rows="4"><?php  echo $rs_upd['note'];?></textarea>
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <td colspan="2">
+                	<input type="reset" value="Cancel" id="button-in"/>
+                	<input type="submit" name="btn_upd" value="Update" id="button-in"  />
+                </td>
+            </tr>
+            </table>
+
+   </div>
+
+    </form>
+
+</div><!-- end of style_informatios -->
+
+<?php	
+}
+else
+{
+?>
 </body>
 </html>
