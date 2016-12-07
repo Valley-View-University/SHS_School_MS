@@ -63,3 +63,76 @@ else
 	
 }
 ?>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>EASTBANK SCHOOL</title>
+<link rel="stylesheet" type="text/css" href="css/style_entry.css" />
+</head>
+
+<body>
+<?php
+if($opr=="upd")
+{
+	$sql_upd=mysql_query("SELECT * FROM stu_score_tbl WHERE ss_id=$id");
+	$rs_upd=mysql_fetch_array($sql_upd);
+?>
+
+	<div id="top_style">
+        <div id="top_style_text">
+      		Scores Update
+        </div><!-- end of top_style_text-->
+       <div id="top_style_button"> 
+       		<form method="post">
+            	<a href="?tag=view_scores"><input type="button" name="btn_view" value="Back" id="button_view" style="width:70px;"  /></a>
+             
+       		</form>
+       </div><!-- end of top_style_button-->
+</div><!-- end of top_style-->
+
+<div id="style_informations">
+	<form method="post">
+    	<div>
+    	<table border="0" cellpadding="5" cellspacing="0">
+        	<tr>
+            	<td>Students's Name</td>
+            	<td>
+                	<select name="sudenttxt" id="textbox">
+                    	<option>---- Students's Name -----</option>
+                            <?php
+                          		$student_name=mysql_query("SELECT * FROM stu_tbl");
+								while($row=mysql_fetch_array($student_name)){
+									 if($row['stu_id']==$rs_upd['stu_id'])
+								   		$iselect="selected";
+									else
+										$iselect="";
+								?>
+                                <option value="<?php echo $row['stu_id'];?>" <?php echo $iselect ;?> > <?php echo $row['f_name']; echo" "; echo $row['l_name'];?> </option>
+								<?php	
+								}
+                            ?>
+                            
+                    </select>
+                </td>
+            </tr>
+            
+            <tr>
+            	<td>Facuties's Name</td>
+            	<td>
+                	<select name="factxt" id="textbox">
+                    	<option>---- Facuries's Name   ------</option>
+                            <?php
+                               $fac_name=mysql_query("SELECT * FROM facuties_tbl");
+							   while($row=mysql_fetch_array($fac_name)){
+								    if($row['faculties_id']==$rs_upd['faculties_id'])
+								   		$iselect="selected";
+									else
+										$iselect="";
+								?>
+                        		<option value="<?php echo $row['faculties_id'];?>" <?php echo $iselect ;?> > <?php echo $row['faculties_name'];?> </option>
+                                <?php 
+							   }
+                            ?>
+                    </select>
+                </td>
+            </tr>
