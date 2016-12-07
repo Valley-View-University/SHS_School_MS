@@ -236,7 +236,8 @@ if($opr=="upd")
                 </td>
             </tr>
     	</table>
-  </div>
+
+		</div>
     </form>
 
 </div><!-- end of style_informatios -->
@@ -285,6 +286,74 @@ else
                     <input type="radio" name="gender" value="Female"/>Female
                 </td>
             </tr>
+		          
+            <tr>
+            	<td>Date Of Birth:</td>
+                <td>
+                	<select name="yy" >
+                    	<option>Year</option>
+                        <?php
+							
+							for($i=1985;$i<=2015;$i++){	
+							echo"<option value='$i'>$i</option>";
+							}
+						?>
+               	  </select>
+                    -
+                    <select name="mm">
+                    	<option>Month</option>
+						<?php
+                            $mm=array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","NOv","Dec");
+                            $i=0;
+                            foreach($mm as $mon){
+                                $i++;
+                                echo"<option value='$i'> $mon</option>";		
+                            }
+                        ?>
+                    </select>
+                    -
+                    <select name="dd">
+                    	<option>Date</option>
+						<?php
+                        for($i=1;$i<=31;$i++){
+                        ?>
+                        <option value="<?php echo $i; ?>">
+                        <?php
+                        if($i<10)
+                            echo"0".$i;
+                        else
+                            echo"$i";	  
+						?>
+						</option>	
+						<?php 
+						}?>
+					</select>
+              </td>
+        </tr>
+            
+            <tr>
+            	<td>Place Of Brith:</td>
+                <td>
+                	<input type="text" name="pobtxt" id="textbox"/>
+                
+                </td>
+            </tr>
+            <tr>
+            	<td>Address:</td>
+            	<td>
+                	<textarea name="addrtxt" cols="22" rows="3"></textarea>
+    			</td>
+        	</tr>
+            
+            <tr>
+                <td colspan="2">
+                	<input type="reset" value="Cancel" id="button-in"/>
+                	<input type="submit" name="btn_sub" value="Register" id="button-in"  />
+                </td>
+            </tr>
+	  </table>
+    </div>
+ 
 
 
 
