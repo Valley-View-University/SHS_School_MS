@@ -209,3 +209,96 @@ else
        </div><!-- end of top_style_button-->
 </div><!-- end of top_style-->
 
+<div id="style_informations">
+	<form method="post">
+    	<div>
+    	<table border="0" cellpadding="5" cellspacing="0">
+        	<tr>
+            	<td>Students's Name</td>
+            	<td>
+                	<select name="sudenttxt" id="textbox">
+                    	<option>---- Students's Name -----</option>
+                            <?php
+                          		$student_name=mysql_query("SELECT * FROM stu_tbl");
+								while($row=mysql_fetch_array($student_name)){
+								?>
+                                <option value="<?php echo $row['stu_id'];?>"> <?php echo $row['f_name']; echo" "; echo $row['l_name'];?> </option>
+								<?php	
+								}
+                            ?>
+                            
+                    </select>
+                </td>
+            </tr>
+            
+            <tr>
+            	<td>Facuties's Name</td>
+            	<td>
+                	<select name="factxt" id="textbox">
+                    	<option>---- Facuries's Name   ------</option>
+                            <?php
+                               $fac_name=mysql_query("SELECT * FROM facuties_tbl");
+							   while($row=mysql_fetch_array($fac_name)){
+								?>
+                        		<option value="<?php echo $row['faculties_id'];?>"> <?php echo $row['faculties_name'];?> </option>
+                                <?php 
+							   }
+                            ?>
+                    </select>
+                </td>
+            </tr>
+            
+            <tr>
+            	<td>Subjects's Name</td>
+            	<td>
+                	<select name="subjecttxt" id="textbox">
+                    	<option>------------ Sujects -----------</option>
+                            <?php
+                               $subject=mysql_query("SELECT * FROM sub_tbl");
+							   while($row=mysql_fetch_array($subject)){
+							?>
+                            <option value="<?php echo $row['sub_id'];?>"> <?php echo $row['sub_name'];?> </option>
+                            <?php	   
+							   }
+                            ?>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+            	<td>Miderm</td>
+            	<td>
+                	<input type="text" name="midermtxt" id="textbox" />
+                </td>
+            </tr>
+            
+            <tr>
+            	<td>Final</td>
+                <td>
+                	<input type="text" name="finaltxt"  id="textbox" />
+                </td>
+            </tr>
+            
+            <tr>
+            	<td>Note</td>
+                <td>
+                	<textarea name="notetxt" cols="23" rows="3"></textarea>
+                </td>
+            </tr>
+            
+            <tr>
+                <td colspan="2">
+                	<input type="reset" value="Cancel" id="button-in"/>
+                	<input type="submit" name="btn_sub" value="Add Now" id="button-in"  />
+                </td>
+            </tr>
+		</table>
+
+   </div>
+    </form>
+
+</div><!-- end of style_informatios -->
+<?php
+}
+?>
+</body>
+</html>
