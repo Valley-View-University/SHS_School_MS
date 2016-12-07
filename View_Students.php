@@ -42,4 +42,24 @@ if(isset($_GET['rs_id']))
         	<input type="submit" name="btnsearch" value="Search" id="button-search" title="Search Student" />
         </td>
     </tr>
+</table>
+</form>
+</div><!--- end of style_div -->
+<br />
+<div id="content-input">
+<form method="post">
+
+    <table border="1" width="1050px" align="center" cellpadding="3" class="mytable" cellspacing="0">
+        <tr>
+            <th>No</th>
+            <th>Student Name</th>
+            <th>Gender</th>
+            <th>Date of Birth</th>
+            <th>Place of Birth</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>E-mail</th>
+            <th>Note</th>
+            <th colspan="2">Operation</th>
+        </tr>
 
