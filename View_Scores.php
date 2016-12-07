@@ -43,4 +43,49 @@ if(isset($_GET['rs_id']))
 <div id="content-input">
 	 <table border="1" width="1050px" align="center" cellpadding="3" class="mytable" cellspacing="0">
         <tr>
-            
+                     <th>No</th>
+            <th>Students ID </th>
+            <th>Faculties ID</th>
+            <th>Subjecst ID </th>
+            <th>Mider</th>
+            <th>Final</th>
+            <th>Note</th>
+            <th colspan="2">Operation</th>
+        </tr>
+        
+        <?php
+		
+		$key="";
+	if(isset($_POST['searchtxt']))
+		$key=$_POST['searchtxt'];
+	
+	if($key !="")
+		$sql_sel=mysql_query("SElECT * FROM stu_score_tbl WHERE stu_id  like '%$key%' ");
+	else
+        $sql_sel=mysql_query("SELECT * FROM stu_score_tbl");
+		
+    $i=0;
+    while($row=mysql_fetch_array($sql_sel)){
+    $i++;
+    $color=($i%2==0)?"lightblue":"white";
+    ?>
+      <tr bgcolor="<?php echo $color?>">
+            <td><?php echo $i;?></td>
+            <td><?php echo $row['stu_id'];?></td>
+            <td><?php echo $row['faculties_id'];?></td>
+            <td><?php echo $row['sub_id'];?></td>
+            <td><?php echo $row['miderm'];?></td>
+            <td><?php echo $row['final'];?></td>
+            <td><?php echo $row['note'];?></td>
+            <td align="center"><a href="?tag=score_entry&opr=upd&rs_id=<?php echo $row['ss_id'];?>"><img src="picture/update.png" /></a></td>
+            <td align="center"><a href="?tag=view_scores&opr=del&rs_id=<?php echo $row['ss_id'];?>"><img src="picture/delete.png" /></a></td>
+        </tr>
+        
+    <?php
+		
+    }
+    ?>
+    </table>
+</div>
+</body>
+</html>
