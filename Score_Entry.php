@@ -136,3 +136,38 @@ if($opr=="upd")
                     </select>
                 </td>
             </tr>
+		       
+            <tr>
+            	<td>Subjects's Name</td>
+            	<td>
+                	<select name="subjecttxt" id="textbox">
+                    	<option>------------ Sujects -----------</option>
+                            <?php
+                               $subject=mysql_query("SELECT * FROM sub_tbl");
+							   while($row=mysql_fetch_array($subject)){
+								   if($row['sub_id']==$rs_upd['sub_id'])
+								   		$iselect="selected";
+									else
+										$iselect="";
+							?>
+                            <option value="<?php echo $row['sub_id'];?>" <?php echo $iselect ;?> > <?php echo $row['sub_name'];?> </option>
+                            <?php	   
+							   }
+                            ?>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+            	<td>Miderm</td>
+            	<td>
+                	<input type="text" name="midermtxt" id="textbox" value="<?php echo $rs_upd['miderm'];?> "/>
+                </td>
+            </tr>
+            
+            <tr>
+            	<td>Final</td>
+                <td>
+                	<input type="text" name="finaltxt"  id="textbox" value="<?php echo $rs_upd['final'];?>" />
+                </td>
+            </tr>
+ 
