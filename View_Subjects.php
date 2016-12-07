@@ -35,3 +35,25 @@ if(isset($_GET['rs_id']))
         <td><a href="?tag=subject_entry"><input type="button" title="Add new Subjects" name="butAdd" value="Add New" id="button-search" /></a></td>
         <td><input type="text" name="searchtxtz" title="Enter name for search " class="search" autocomplete="off"/></td>
         <td style="float:right"><input type="submit" name="btnsearch" value="Search" id="button-search" title="Search Subject" /></td>
+  </tr>
+</table>
+</form>
+</div><!--end of style_div -->
+<br />
+
+<div id="content-input">
+	<form method="post">
+    <table border="1" width="805px" align="center" cellpadding="3" class="mytable" cellspacing="0">
+        <tr>
+            <th>No</th>
+            <th>Department Name</th>
+            <th>Teachers Name</th>
+            <th>Semester</th>
+             <th>Subject Name</th>
+            <th colspan="2">Operation</th>
+      	</tr>
+        
+         <?php
+		 $key="";
+	if(isset($_POST['searchtxt']))
+		$key=$_POST['searchtxt'];
