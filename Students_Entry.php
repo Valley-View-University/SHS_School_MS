@@ -69,4 +69,176 @@ if(isset($_POST['btn_upd'])){
 		$msg="Update Fail".mysql_error();
 	}
 ?>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet"  type="text/css" href="css/style_entry.css" />
+<title>EASTBANK SCHOOL</title>
+</head>
+<body>
+<?php
+
+if($opr=="upd")
+{
+	$sql_upd=mysql_query("SELECT * FROM stu_tbl WHERE stu_id=$id");
+	$rs_upd=mysql_fetch_array($sql_upd);
+	list($y,$m,$d)=explode('-',$rs_upd['dob']);
+?>
+
+<!-- for form Upadte-->
+
+<div id="top_style">
+        <div id="top_style_text">
+        Students Update </div>
+        <!-- end of top_style_text-->
+       <div id="top_style_button"> 
+       		<form method="post">
+            	<a href="?tag=view_students"><input type="button" name="btn_view" title="View Students" value="Back" id="button_view" style="width:70px;"  /></a>
+             
+       		</form>
+       </div><!-- end of top_style_button-->
+</div><!-- end of top_style-->
+
+ 
+<div id="style_informations">
+	<form method="post" >
+    	<div>
+    	<table border="0" cellpadding="4" cellspacing="0">
+        	<tr>
+            	<td>First Name:</td>
+            	<td>
+                	<input type="text" name="fnametxt" id="textbox" value="<?php echo $rs_upd['f_name'];?>"/>
+                </td>
+            </tr>
+            
+            <tr>
+            	<td>Last Name:</td>
+            	<td>
+                	<input type="text" name="lnametxt" id="textbox" value="<?php echo $rs_upd['l_name'];?>"/>
+                </td>
+            </tr>
+            
+            <tr>
+            	<td>Gender:</td>
+                <td>
+                	<input type="radio" name="gender" value="Male" <?php if($rs_upd['gender']=="Male") echo "checked";?> />Male
+                    <input type="radio" name="gender" value="Female" <?php if($rs_upd['gender']=="Female") echo "checked";?>/>Female
+                </td>
+            </tr>
+            
+            <tr>
+            	<td>Date Of Birth:</td>
+                <td>
+                	<select name="yy" >
+                    	<option>years</option>
+                    	
+                        <?php
+							$sel="";
+							for($i=1985;$i<=2015;$i++){	
+								if($i==$y){
+									$sel="selected='selected'";}
+								else
+								$sel="";
+							echo"<option value='$i' $sel>$i </option>";
+							}
+							
+						?>
+                       
+                	</select>
+                    -
+                    <select name="mm">
+                    	<option>Month</option>
+						<?php
+							$sel="";
+                            $mm=array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","NOv","Dec");
+                            $i=0;
+                            foreach($mm as $mon){
+                                $i++;
+									if($i==$m){
+										$sel=$sel="selected='selected'";}
+									else
+										$sel="";
+                                echo"<option value='$i' $sel> $mon</option>";		
+                            }
+                        ?>
+                    </select>
+                    -
+                    <select name="dd">
+                    	<option>Date</option>
+						<?php
+						$sel="";
+                        for($i=1;$i<=31;$i++){
+							if($i==$d){
+								$sel=$sel="selected='selected'";}
+							else
+								$sel="";
+                        ?>
+                        <option value="<?php echo $i ;?>"<?php echo $sel?> >
+                        <?php
+                        if($i<10)
+                            echo"0"."$i" ;
+                        else
+                            echo"$i";	
+							  
+						?>
+						</option>	
+						<?php 
+						}?>
+					</select>
+                </td>
+            </tr>
+            
+            <tr>
+            	<td>Place Of Brith:</td>
+                <td>
+                	<input type="text" name="pobtxt" id="textbox" value="<?php echo $rs_upd['pob'];?> "/>
+                
+                </td>
+            </tr>
+            <tr>
+            	<td>Address:</td>
+            	<td>
+                	<textarea name="addrtxt" cols="22" rows="3"> <?php echo $rs_upd['address'];?></textarea>
+    			</td>
+        	</tr>
+            
+            <tr>
+                <td colspan="2">
+                	<input type="reset" value="Cancel" id="button-in"/>
+                	<input type="submit" name="btn_upd" value="Update" id="button-in"  />
+                </td>
+            </tr>
+		</table>
+   </div>
+ 
+	<div>
+    	<table border="0" cellpadding="4" cellspacing="0">
+        	
+            
+            <tr>
+            	<td>Phone:</td>
+            	<td>
+                	<input type="text" name="phonetxt" id="textbox" value="<?php echo $rs_upd['phone'];?>" />
+                </td>
+            </tr>
+            
+            <tr>
+            	<td>E-mail:</td>
+                <td>
+                	<input type="text" name="emailtxt"  id="textbox" value="<?php echo $rs_upd['email'];?> "/>
+                </td>
+            </tr>
+            
+            <tr>
+            	<td>Note:</td>
+                <td>
+                	<textarea name="notetxt" cols="22" rows="5"><?php echo $rs_upd['note'];?></textarea>
+                </td>
+            </tr>
+    	</table>
+  </div>
+    </form>
+
+</div><!-- end of style_informatios -->
+
 
