@@ -57,3 +57,13 @@ if(isset($_GET['rs_id']))
 		 $key="";
 	if(isset($_POST['searchtxt']))
 		$key=$_POST['searchtxt'];
+	    if($key !="")
+		$sql_sel=mysql_query("SElECT * FROM sub_tbl WHERE sub_name  like '%$key%' ");
+	else
+        $sql_sel=mysql_query("SELECT * FROM sub_tbl");
+		
+    $i=0;
+    while($row=mysql_fetch_array($sql_sel)){
+    $i++;
+    $color=($i%2==0)?"lightblue":"white";
+    ?>
