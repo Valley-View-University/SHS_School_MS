@@ -240,5 +240,51 @@ if($opr=="upd")
     </form>
 
 </div><!-- end of style_informatios -->
+	
+<?php	
+}
+else
+{
+?>
+<!-- for form Register-->
+	
+<div id="top_style">
+        <div id="top_style_text">
+        Students Entry
+        </div><!-- end of top_style_text-->
+       <div id="top_style_button"> 
+       		<form method="post">
+            	<a href="?tag=view_students"><input type="button" name="btn_view" title="View Students" value="View_Students" id="button_view" style="width:120px;"  /></a>
+             
+       		</form>
+       </div><!-- end of top_style_button-->
+</div><!-- end of top_style-->
+
+<div id="style_informations">
+	<form method="post" >
+    <div>
+   	  <table border="0" cellpadding="4" cellspacing="0">
+        	<tr>
+            	<td>First Name:</td>
+            	<td>
+                	<input type="text" name="fnametxt" id="textbox"/>
+                </td>
+            </tr>
+            
+            <tr>
+            	<td>Last Name:</td>
+            	<td>
+                	<input type="text" name="lnametxt" id="textbox"/>
+                </td>
+            </tr>
+            
+            <tr>
+            	<td>Gender:</td>
+                <td>
+                	<input type="radio" name="gender" value="Male" checked="checked" />Male
+                    <input type="radio" name="gender" value="Female"/>Female
+                </td>
+            </tr>
+
 
 
