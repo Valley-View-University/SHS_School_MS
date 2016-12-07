@@ -62,4 +62,45 @@ if(isset($_GET['rs_id']))
             <th>Note</th>
             <th colspan="2">Operation</th>
         </tr>
-
+  <?php
+	$key="";
+	if(isset($_POST['searchtxt']))
+		$key=$_POST['searchtxt'];
+	
+	if($key !="")
+		$sql_sel=mysql_query("SElECT * FROM stu_tbl WHERE f_name  like '%$key%' or l_name like '%$key%'");
+	else
+		 $sql_sel=mysql_query("SELECT * FROM stu_tbl");
+	
+		
+       
+    $i=0;
+    while($row=mysql_fetch_array($sql_sel)){
+    $i++;
+    $color=($i%2==0)?"lightblue":"white";
+    ?>
+      <tr bgcolor="<?php echo $color?>">
+            <td><?php echo $i;?></td>
+            <td><?php echo $row['f_name']."    ".$row['l_name'];?></td>
+            <td><?php echo $row['gender'];?></td>
+            <td><?php echo $row['dob'];?></td>
+            <td><?php echo $row['pob'];?></td>
+            <td><?php echo $row['address'];?></td>
+            <td><?php echo $row['phone'];?></td>
+            <td><?php echo $row['email'];?></td>
+            <td><?php echo $row['note'];?></td>
+            <td><a href="?tag=student_entry&opr=upd&rs_id=<?php echo $row['stu_id'];?>" title="Update"><img src="picture/update.png" /></a></td>
+            <td><a href="?tag=view_students&opr=del&rs_id=<?php echo $row['stu_id'];?>" title="Delete"><img src="picture/delete.png" /></a></td>
+             
+        </tr>
+    <?php	
+    }
+		
+		
+	
+    ?>
+    </table>
+</form>
+</div>
+</body>
+</html>
