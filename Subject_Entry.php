@@ -134,4 +134,138 @@ if($opr=="upd")
 								<?php	
 									}
                             ?>
+							         </select>
+                </td>
+            </tr>
+            
+            <tr>
+            	<td>Semester</td>
+            	<td>
+                	<input type="text" name="semestertxt" id="textbox" value="<?php echo $rs_upd['semester'];?>"  />
+                </td>
+            </tr>
+            
+            <tr>
+            	<td>Subjects's name</td>
+                <td>
+                	<input type="text" name="subtxt"  id="textbox" value="<?php echo $rs_upd['sub_name'];?>" />
+                </td>
+            </tr>
+            
+            <tr>
+            	<td>Note</td>
+                <td>
+                	<textarea name="notetxt" cols="23" rows="3"><?php echo $rs_upd['note'];?></textarea>
+                </td>
+            </tr>
+            
+            <tr>
+                <td colspan="2">
+                	<input type="reset" value="Cancel" id="button-in"/>
+                	<input type="submit" name="btn_upd" value="Update" id="button-in"  />
+                </td>
+            </tr>
+		</table>
+
+    	</div>
+    </form>
+
+</div><!-- end of style_informatios -->
+<?php
+}
+else
+{
+?>
+
+<div id="top_style">
+        <div id="top_style_text">
+        Subjects Entry
+        </div><!-- end of top_style_text-->
+       <div id="top_style_button"> 
+       		<form method="post">
+            	<a href="?tag=view_subjects" ><input type="button" name="btn_view" title="View Subjects" value="View_Subjects" id="button_view" style="width:120px;"  /></a>
+             
+       		</form>
+       </div><!-- end of top_style_button-->
+</div><!-- end of top_style-->
+
+
+<div id="style_informations">
+	<form method="post">
+    	<div>
+        	<table border="0" cellpadding="5" cellspacing="0">
+        	<tr>
+            	<td>Facuties's Name</td>
+            	<td>
+                	<select name="factxt" id="textbox">
+                    	<option>---- Facuries's Name   ------</option>
+                            <?php
+                               $fac_name=mysql_query("SELECT * FROM facuties_tbl");
+							   while($row=mysql_fetch_array($fac_name)){
+								?>
+                        		<option value="<?php echo $row['faculties_id'];?>"> <?php echo $row['faculties_name'];?> </option>
+                                <?php 
+							   }
+                            ?>
+                    </select>
+                </td>
+            </tr>
+            
+            <tr>
+            	<td>Teacher's Name</td>
+            	<td>
+                	<select name="techtxt" id="textbox">
+                    	<option>---- Teachers's Name   ----</option>
+                            <?php
+                                $te_name=mysql_query("SELECT * FROM teacher_tbl");
+								while($row=mysql_fetch_array($te_name)){
+								?>
+                                <option value="<?php echo $row['teacher_id'];?>"> <?php echo $row['f_name'] ; echo " "; echo $row['l_name'];?> </option>
+                                	
+								<?php	
+									}
+                            ?>
+                    </select>
+                </td>
+            </tr>
+            
+            <tr>
+            	<td>Semester</td>
+            	<td>
+                	<input type="text" name="semestertxt" id="textbox"  />
+                </td>
+            </tr>
+            
+            <tr>
+            	<td>Subjects's name</td>
+                <td>
+                	<input type="text" name="subtxt"  id="textbox" />
+                </td>
+            </tr>
+            
+            <tr>
+            	<td>Note</td>
+                <td>
+                	<textarea name="notetxt" cols="23" rows="3"></textarea>
+                </td>
+            </tr>
+            
+            <tr>
+                <td colspan="2">
+                	<input type="reset" value="Cancel" id="button-in"/>
+                	<input type="submit" name="btn_sub" value="Add Now" id="button-in"  />
+                </td>
+            </tr>
+		</table>
+
+    	</div>
+    </form>
+
+</div><!-- end of style_informatios -->
+
+<?php
+}
+?>
+</body>
+</html>
  
