@@ -21,3 +21,21 @@
     </tr>
 </table>
 </form>
+	</div><!--- end of style_div -->
+<br />
+<div id="content-input">
+<form method="post">
+
+    <table border="1" width="1050px" align="center" cellpadding="3" class="mytable" cellspacing="0">
+        <tr>
+            <th>No</th>
+            <th>Student Name</th>
+            <th>class</th>
+            <th>Term</th>
+            <th>Year</th>
+            <th>tution</th>
+            <th>amount</th>
+            <th>Balance</th>
+			<th>date</th>
+           
+        </tr>
