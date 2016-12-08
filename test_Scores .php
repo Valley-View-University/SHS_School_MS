@@ -100,4 +100,39 @@ else
 		$sql_en=mysql_query("SELECT * FROM stu_score_tbl WHERE stu_id=".$row['stu_id']." AND sub_id=3");
 		$fec_eng=mysql_fetch_array($sql_en);
     ?>    
-       
+   <tr bgcolor="<?php echo $color?>">
+            <td><?php echo $i;?></td>
+            <td align="left"><?php echo $fec_stu['f_name']." ".$fec_stu['l_name'];?></td>
+            <td><?php echo $fec_stu['gender'];?></td>
+            <td><?php echo $fec_stu['dob'];?></td>
+            <td id="center"><?php echo $fec_web['miderm'];?></td>
+            <td id="center"><?php echo $fec_web['final'];?></td>
+            <td id="center"><b><?php echo $fec_web['miderm']+$fec_web['final'];?></b></td>
+            <td id="center"><?php echo $fec_cpp['miderm'];?></td>
+            <td id="center"><?php echo $fec_cpp['final'];?></td>
+            <td id="center"><b><?php echo $fec_cpp['miderm']+$fec_cpp['final'];?></b></td>
+            <td id="center"><?php echo $fec_ec['miderm'];?></td>
+            <td id="center"><?php echo $fec_ec['final'];?></td>
+            <td id="center"><b><?php echo $fec_ec['miderm']+$fec_ec['final'];?></b></td>
+            <td id="center"><?php echo $fec_netw['miderm'];?></td>
+            <td id="center"><?php echo $fec_netw['final'];?></td>
+            <td id="center"><b><?php echo $fec_netw['miderm']+$fec_netw['final'];?></b></td>
+             <td id="center"><?php echo $fec_data['miderm'];?></td>
+            <td id="center"><?php echo $fec_data['final'];?></td>
+            <td id="center"><b><?php echo $fec_data['miderm']+$fec_data['final'];?></b></td>
+             <td id="center"><?php echo $fec_eng['miderm'];?></td>
+            <td id="center"><?php echo $fec_eng['final'];?></td>
+            <td id="center"><b><?php echo $fec_eng['miderm']+$fec_eng['final'];?></b></td>
+            <td><?php echo $fec_eng['note'];?></td>
+            <td align="center"><a href="?tag=score_entry&opr=upd&rs_id=<?php echo $row['ss_id'];?>"><img src="picture/update.png" /></a></td>
+            <td align="center"><a href="?opr=del&rs_id=<?php echo $row['ss_id'];?>"><img src="picture/delete.png" /></a></td>
+        </tr>
+        
+    <?php
+		
+    }
+    ?>
+    </table>
+</div>
+</body>
+</html>    
