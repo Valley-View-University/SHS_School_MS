@@ -44,3 +44,54 @@
       <td><input type="text" name="amount" size="30" id='in'title="pay money" /></td>
     </tr><br/><br/>
 	    <tr>
+ <td>TUITION PAID</td>
+      <td>&nbsp;</td>
+      <td><input type="text" name="tuition" size="30" id='in'title="pay money" /></td>
+    </tr><br/><br/>
+    <tr>
+      <td>DATE</td>
+      <td>&nbsp;</td>
+      <td><input type="date" id="SelectedDate" name='date' readonly onclick="GetDate(this)" placeholder='select date' /></td>
+    </tr><br/><br/>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td valign="bottom" align="center"><input type="submit" name="send" id='send'value="send data" />
+        <input type='reset' id='clear'name="clear" value="cancel"  /></td>
+    </tr><br/><br/>
+  </table>
+</form>
+<?php		
+$josh = mysqli_connect("localhost", "root", "", "akas");
+ 
+
+if($josh === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+ 
+$fnames =$_POST['firstname'];
+			
+			$class=$_POST['class'];
+			$term=$_POST['term'];
+			$year=$_POST['year'];
+			$tution=$_POST['tuition'];
+			
+			$amount =$_POST['amount'];
+			$balance;
+			$date=$_POST['date'];
+			
+			//echo $day;
+			$balance=$amount-$tution;
+			
+	$sql = "INSERT INTO payment (fnames, class, term, year,tution,amount,balance,date) VALUES ('$fnames','$class','$term','$year','$tution','$amount','$balance','$date')";
+if(mysqli_query($josh, $sql)){
+    echo "";
+} else{
+    echo "ERROR: Could not able to execute $sql. " . mysqli_error($josh);
+}
+ 
+
+mysqli_close($josh);
+?>
+</body>
+</html>
