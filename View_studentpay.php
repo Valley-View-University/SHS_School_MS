@@ -56,3 +56,27 @@
     $i++;
     $color=($i%2==0)?"lightblue":"white";
     ?>
+ <tr bgcolor="<?php echo $color?>">
+            <td><?php echo $i;?></td>
+            <td><?php echo $row['fnames'];?></td>
+            <td><?php echo $row['class'];?></td>
+            <td><?php echo $row['term'];?></td>
+            <td><?php echo $row['year'];?></td>
+            <td><?php echo $row['tution'];?></td>
+            <td><?php echo $row['amount'];?></td>
+            <td><?php echo $row['balance'];?></td>
+			 <td><?php echo $row['date'];?></td>
+          
+             
+        </tr>
+    <?php	
+    }
+		
+		
+	
+    ?>
+    </table>
+</form>
+</div>
+</body>
+</html>
