@@ -53,7 +53,7 @@
                 	</div>
                     
 					<div >
-                        <a href="?tag=student_pay" title="payment">Student pay</a><br />
+                        <a href="?tag=studentpay" title="payment">Student pay</a><br />
                 	</div>
                     
                      <div>
@@ -209,10 +209,14 @@
 							include("View_Scores.php");
 						elseif($tag=="view_users")
 							include("View_Users.php");
+						elseif($tag=="view_studentpay")
+							include("View_studentpay.php");
 						elseif($tag=="view_faculties")
 							include("View_Faculties.php");
 						elseif($tag=="nonstaff")
 							include("nonstaff.php");
+						elseif($tag=="studentpay")
+							include("studentpay.php");
 						elseif($tag=="test_score")
 							include("test_Scores .php");
 							/*$tag= $_REQUEST['tag'];
