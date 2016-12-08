@@ -39,3 +39,20 @@
 			<th>date</th>
            
         </tr>
+	     <?php
+	$key="";
+	if(isset($_POST['searchtxt']))
+		$key=$_POST['searchtxt'];
+	
+	if($key !="")
+		$sql_sel=mysql_query("SElECT * FROM payment WHERE fnames  like '%$key%'");
+	else
+		 $sql_sel=mysql_query("SELECT * FROM payment");
+	
+		
+       
+    $i=0;
+    while($row=mysql_fetch_array($sql_sel)){
+    $i++;
+    $color=($i%2==0)?"lightblue":"white";
+    ?>
