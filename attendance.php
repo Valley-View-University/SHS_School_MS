@@ -19,3 +19,26 @@ $josh = mysqli_connect("localhost", "root", "odunayo07", "assignment");
  
 
 if($josh === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+ 
+$name = mysqli_real_escape_string($josh, $_POST['name']);
+$date= mysqli_real_escape_string($josh, $_POST['date']);
+$time= mysqli_real_escape_string($josh, $_POST['time']);
+
+ 
+
+$sql = "INSERT INTO teachercheck (name, date, time) VALUES ('$name', '$date', '$time')";
+if(mysqli_query($josh, $sql)){
+    echo "";
+} else{
+    echo "ERROR: Could not able to execute $sql. " . mysqli_error($josh);
+}
+ 
+
+mysqli_close($josh);
+?>
+	</body>
+</html>
+
+
