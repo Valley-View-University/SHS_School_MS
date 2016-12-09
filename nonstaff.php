@@ -31,4 +31,16 @@ $Address= mysqli_real_escape_string($josh, $_POST['address']);
 $Duty= mysqli_real_escape_string($josh, $_POST['duty']);
 $Salary= mysqli_real_escape_string($josh, $_POST['salary']);
 $Phone= mysqli_real_escape_string($josh, $_POST['phone']);
+ $sql = "INSERT INTO nonstaff_tbl (name, gender, address, duty, salary, phone) VALUES ('$Name', '$Gender', '$Address', '$Duty', '$Salary', '$Phone')";
+if(mysqli_query($josh, $sql)){
+    echo "";
+} else{
+    echo "ERROR: Could not able to execute $sql. " . mysqli_error($josh);
+}
  
+
+mysqli_close($josh);
+?>
+
+	</body>
+</html>
