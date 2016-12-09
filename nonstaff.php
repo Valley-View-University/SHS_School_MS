@@ -17,3 +17,18 @@
     <a href="?tag=view_nonstaff"><input type="button" name="btn_view" title="View Teachers" value="View Nonstaff" id="button_view" style="width:120px;"  /></a>
              
        		</form>	
+<?php		
+$josh = mysqli_connect("localhost", "root", "odunayo07", "assignment");
+ 
+
+if($josh === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+ 
+$Name = mysqli_real_escape_string($josh, $_POST['name']);
+$Gender= mysqli_real_escape_string($josh, $_POST['gender']);
+$Address= mysqli_real_escape_string($josh, $_POST['address']);
+$Duty= mysqli_real_escape_string($josh, $_POST['duty']);
+$Salary= mysqli_real_escape_string($josh, $_POST['salary']);
+$Phone= mysqli_real_escape_string($josh, $_POST['phone']);
+ 
