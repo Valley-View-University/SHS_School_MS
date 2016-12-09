@@ -43,13 +43,9 @@
                     <div >
                         <a href="?tag=nonstaff" title="nonstaff">Register Non-staff</a><br />
                 	</div>
-					
-					  <div >
-                        <a href="?tag=teachers_pay" title="payment">Teacher pay</a><br />
-                	</div>
-					
+		
 					<div >
-                        <a href="?tag=teachers_attendance" title="Attendance">Teacher Attendance</a><br />
+                        <a href="?tag=attendance" title="Attendance">Teacher Attendance</a><br />
                 	</div>
                     
 					<div >
@@ -195,6 +191,8 @@
                             include("Subject_Entry.php");
                         elseif($tag=="faculties_entry")
                             include("Faculties_Entry.php");
+						elseif($tag=="attendance")
+                            include("attendance.php");	
                         elseif($tag=="susers_entry")
                             include("Users_Entry.php");	
                         elseif($tag=="view_students")
@@ -211,6 +209,8 @@
 							include("View_Users.php");
 						elseif($tag=="view_studentpay")
 							include("View_studentpay.php");
+						elseif($tag=="view_attendance")
+							include("View_attendance.php");
 						elseif($tag=="view_faculties")
 							include("View_Faculties.php");
 						elseif($tag=="nonstaff")
