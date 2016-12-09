@@ -31,4 +31,42 @@
             <th>Phone</th>
            
         </tr>
-        
+   <?php
+	$key="";
+	if(isset($_POST['searchtxt']))
+		$key=$_POST['searchtxt'];
+	
+	if($key !="")
+		$sql_sel=mysql_query("SElECT * FROM payment WHERE Name  like '%$key%'");
+	else
+		 $sql_sel=mysql_query("SELECT * FROM nonstaff_tbl");
+	
+		
+       
+    $i=0;
+    while($row=mysql_fetch_array($sql_sel)){
+    $i++;
+    $color=($i%2==0)?"lightblue":"white";
+    ?>
+      <tr bgcolor="<?php echo $color?>">
+            <td><?php echo $i;?></td>
+            <td><?php echo $row['Name'];?></td>
+            <td><?php echo $row['Gender'];?></td>
+            <td><?php echo $row['Address'];?></td>
+            <td><?php echo $row['Duty'];?></td>
+            <td><?php echo $row['Salary'];?></td>
+            <td><?php echo $row['Phone'];?></td>
+          
+             
+        </tr>
+    <?php	
+    }
+		
+		
+	
+    ?>
+    </table>
+</form>
+</div>
+</body>
+</html>      
