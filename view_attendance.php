@@ -23,3 +23,13 @@ $database  = "assignment";
 			 
 			}
 			echo '</table>';
+echo '<table align="center">';
+			echo '<BR><BR><th align="left">NAME</th><th align="left">No OF APPEARANCE</th>';
+			
+			$selt=mysql_query("SELECT COUNT(NAME) as times , NAME FROM teachercheck GROUP BY NAME") or die (mysql_error()) ;
+			while($fetch=mysql_fetch_array($selt)){
+			echo '<tr><td>'.$fetch['NAME'].'</td><td align="center">'.$fetch['times'].'</td></tr>';
+			}
+			echo '</table>';
+			
+			?>
